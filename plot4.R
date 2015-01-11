@@ -35,10 +35,14 @@ plot(x=PwrTbl$DateTime, y=PwrTbl$Sub_metering_1, type="l",
 lines(x=PwrTbl$DateTime, y=PwrTbl$Sub_metering_2, col="red")
 lines(x=PwrTbl$DateTime, y=PwrTbl$Sub_metering_3, col="blue")
 
+# resize the font 
+par(cex= 0.75)
+
 # Create and place legend in the top right corner of the graph
 # List the three variables and display the corresponding line color
+# Makes the legend border and background transparent
 legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
-       lty=c(1,1,1), col=c("black", "red", "blue"))
+       lty=c(1,1,1), col=c("black", "red", "blue"),bg= "transparent",box.col = "transparent")
 
 # create a line plot with lables of day and time vs. Global reactive power
 plot(PwrTbl$DateTime, PwrTbl$Global_reactive_power, type = "l", xlab="datetime",
